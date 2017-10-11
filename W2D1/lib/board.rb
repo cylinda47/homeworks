@@ -27,7 +27,6 @@ class Board
   end
 
   def make_move(start_pos, current_player_name)
-    #if valid_move?(start_pos)
 
       end_pos = start_pos + @cups[start_pos].length
 
@@ -38,18 +37,16 @@ class Board
       skip_count = 0
 
       (start_pos+1..end_pos).each do |i|
-        idx = i % 14
-        if i == skip
+        idx = (i + skip_count) % 14
+        if idx == skip
           skip_count += 1
-          @cups[(end_pos+skip_count)%14].concat([:stone])
-          next
+          idx = (i + skip_count) % 14
         end
         @cups[idx].concat([:stone])
       end
 
       render
-      next_turn((end_pos+skip_count)%14)
-    #end
+      next_turn((end_pos + skip_count) % 14)
 
   end
 
