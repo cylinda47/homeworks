@@ -131,4 +131,5 @@ class MetaCorgiSnacks
       tastiness > 30 ? "* #{result}" : result
     end
   end
+
 end
