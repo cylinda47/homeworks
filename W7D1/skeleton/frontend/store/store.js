@@ -4,7 +4,6 @@ import rootReducer from '../reducers/root_reducer';
 const addLoggingToDispatch = store => next => action => {
   console.log(store.getState());
   console.log(action);
-  console.log(next);
   next(action);
   console.log(store.getState());
 };

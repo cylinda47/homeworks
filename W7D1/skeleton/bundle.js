@@ -11853,7 +11853,6 @@ var addLoggingToDispatch = function addLoggingToDispatch(store) {
     return function (action) {
       console.log(store.getState());
       console.log(action);
-      console.log(next);
       next(action);
       console.log(store.getState());
     };
